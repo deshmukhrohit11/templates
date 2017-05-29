@@ -3,8 +3,8 @@ services:
   wordpress:
     image: wordpress
     environment:
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
     stdin_open: true
     tty: true
     links:
@@ -17,10 +17,10 @@ services:
   mysql:
     image: mysql
     environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_PASSWORD: wordpress
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: wordpress
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
     stdin_open: true
     tty: true
     ports:
